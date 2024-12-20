@@ -1,4 +1,4 @@
-# Chat with Image 🖼️
+# Chat with Tableau 🖼️
 
 ## Overview
 
