@@ -1,4 +1,4 @@
-# Chat with Tableau 🖼️
+# VizWhisper: Natural Language Data Exploration
 
 ## Overview
 
