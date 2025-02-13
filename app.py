@@ -6,14 +6,24 @@ from mistralai import Mistral
 from dotenv import load_dotenv
 from typing import List
 
+# Streamlit Configuration
+st.set_page_config(page_title="VizWhisper: Natural Language Data Exploration", layout="wide", theme="light")
+
 # Load environment variables
 load_dotenv()
 
 # Constants
 IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"]
 
-# Streamlit Configuration
-st.set_page_config(page_title="VizWhisper: Natural Language Data Exploration", page_icon="🖼️", layout="centered")
+# Hide "Select Model" section
+hide_select_model = """
+    <style>
+    #select_model_section {
+        display: none;
+    }
+    </style>
+    """
+st.markdown(hide_select_model, unsafe_allow_html=True)
 
 # Initialize Groq and Mistral Clients using caching to avoid reinitializing
 @st.cache_resource
@@ -131,7 +141,7 @@ def main():
     # Custom HTML Example
     custom_html = """
     <div style="text-align: center; background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
-        <h1 style="color: #4CAF50;">Chat with Tableau 🖼️</h1>
+        <h1 style="color: #4CAF50;">VizWhisper 🖼️</h1>
         <p style="font-size: 15px;">Upload dashboard images and ask questions about them.</p>
         <div class="footer">
             Developed by HEMANG BHAVASAR | 
@@ -142,11 +152,8 @@ def main():
 
     st.markdown(custom_html, unsafe_allow_html=True)
 
-    model = st.sidebar.selectbox(
-        "Select Model",
-        ("llama-3.2-11b-vision-preview", "llava-v1.5-7b-4096-preview", "pixtral-12b-2409")
-    )
-    
+    model = "llama-3.2-11b-vision-preview"  # Default model
+
     # Modify system prompt
     st.sidebar.header("System Prompt")
     system_prompt = st.sidebar.text_area("Modify the system prompt", value=SYSTEM_MESSAGE["content"])
