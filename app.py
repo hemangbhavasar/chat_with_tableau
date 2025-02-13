@@ -13,7 +13,7 @@ load_dotenv()
 IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"]
 
 # Streamlit Configuration
-st.set_page_config(page_title="Chat with Tableau", page_icon="🖼️", layout="centered")
+st.set_page_config(page_title="VizWhisper: Natural Language Data Exploration", page_icon="🖼️", layout="centered")
 
 # Initialize Groq and Mistral Clients using caching to avoid reinitializing
 @st.cache_resource
