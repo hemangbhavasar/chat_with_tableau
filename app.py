@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from typing import List
 
 # Streamlit Configuration
-st.set_page_config(page_title="VizWhisper: Natural Language Data Exploration", layout="wide", theme="light")
+st.set_page_config(page_title="VizWhisper", layout="wide")
 
 # Load environment variables
 load_dotenv()
@@ -141,7 +141,7 @@ def main():
     # Custom HTML Example
     custom_html = """
     <div style="text-align: center; background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
-        <h1 style="color: #4CAF50;">VizWhisper 🖼️</h1>
+        <h1 style="color: #4CAF50;">VizWhisper: Natural Language Data Exploration </h1>
         <p style="font-size: 15px;">Upload dashboard images and ask questions about them.</p>
         <div class="footer">
             Developed by HEMANG BHAVASAR | 
